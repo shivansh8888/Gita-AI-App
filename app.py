@@ -32,7 +32,7 @@ def initialize_ai():
     splits = text_splitter.split_documents(docs)
 
     # C. Create Embeddings and Vector Database
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+    embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
     vectorstore = Chroma.from_documents(documents=splits, embedding=embeddings)
     retriever = vectorstore.as_retriever(search_kwargs={"k": 3}) # Retrieve top 3 relevant verses
 
